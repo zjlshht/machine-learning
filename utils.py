@@ -1,16 +1,18 @@
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVR
-from xgboost import XGBClassifier
-from sklearn.metrics import roc_curve, auc, precision_recall_curve
+import numpy as np
 import matplotlib.pyplot as plt
 from keras.layers import Dense
 from keras.models import Sequential
 from prettytable import PrettyTable
-import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import roc_curve, auc, precision_recall_curve
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVR
+from sklearn.tree import DecisionTreeClassifier
+from xgboost import XGBClassifier
+
+
 
 
 class datamini():
