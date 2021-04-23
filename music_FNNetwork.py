@@ -1,5 +1,5 @@
 """
-This is a example to run model decisiontree with threshold to classify
+This is a example to run model in FNN without threshold to classify
 """
 
 
@@ -10,12 +10,14 @@ def main():
     X = A[:, :13]
     y = A[:, 13]
     y = divided_y(y)
-    X_train, X_test, y_train, y_test = divided_data(X, y, standard=False)
-    model = datamini(X_train, X_test, y_train)
-    y_pred = model.dectree()
+    X_train, X_test, y_train, y_test = divided_data(X, y)
+    model = datamini(X_train, X_test, y_train, use_threshold=False)
+    y_pred = model.FNNetwork()
     threshold_portion = y_train.mean()
-    plot = data_visualize(y_test, y_pred, threshold_portion,
-                          'decisiontree', divided_by_threshold=True)
+    plot = data_visualize(y_test, y_pred, threshold_portion, 'FNN')
+    plot.ROC_curve()
+    plot.PR_curve()
+    plot.COST_curve()
     plot.indicators_table()
 
 

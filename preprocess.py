@@ -1,6 +1,8 @@
 from pandas.io.parsers import read_csv
 import numpy as np
 import pandas as pd
+
+
 def main():
     data = read_csv("data.csv")
     df = data.values  # 转换数据类型
@@ -32,5 +34,7 @@ def main():
                  a14, a5, a10, a11]).T  # create new dataset
     final = pd.DataFrame(X)
     final.to_csv('Data_on_year.csv', float_format='%.2f', na_rep="NAN!")
+
+
 if __name__ == "__main__":
     main()
